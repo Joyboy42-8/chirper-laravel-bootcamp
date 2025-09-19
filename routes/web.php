@@ -3,5 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ChirpController;
 
-Route::get('/', [ChirpController::class, "index"]);
-Route::post("/create", [ChirpController::class, "store"]);
+Route::get("/", [ChirpController::class, "index"])->name("chirps.index");
+Route::resource("chirps", ChirpController::class)
+    ->only(["store", "edit", "update", "destroy"]);

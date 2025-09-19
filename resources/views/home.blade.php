@@ -3,7 +3,7 @@
     <div class="max-w-2xl mx-auto">
         <div class="card bg-base-100 shadow">
             <div class="card-body">
-                <form action="/create" method="POST">
+                <form action={{ route("chirps.store") }} method="POST">
                     @csrf
                     <div class="form-control w-full">
                         <textarea name="message" rows="4" class="@error("message") textarea-error @enderror textarea textarea-bordered w-full" placeholder="What's on your mind ?"></textarea>
